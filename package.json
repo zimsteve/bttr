@@ -1,17 +1,47 @@
 {
   "name": "bttr",
-  "version": "0.0.0",
-  "private": true,
+  "version": "0.1.0",
+  "description": "The Salty Social Network",
+  "main": "index.js",
   "scripts": {
-    "start": "node ./bin/www"
+    "knex": "knex",
+    "postinstall": "knex migrate:latest",
+    "server": "node-inspector & nodemon server.js --debug",
+    "start": "node server.js"
   },
+  "author": "H & S",
+  "license": "ISC",
   "dependencies": {
-    "body-parser": "~1.15.1",
-    "cookie-parser": "~1.4.3",
-    "debug": "~2.2.0",
-    "express": "~4.13.4",
-    "hbs": "~4.0.0",
-    "morgan": "~1.7.0",
-    "serve-favicon": "~2.3.0"
+    "ava": "^0.16.0",
+    "body-parser": "^1.15.2",
+    "chimp": "^0.40.7",
+    "connect-ensure-login": "^0.1.1",
+    "connect-flash": "^0.1.1",
+    "connect-session-knex": "^1.0.23",
+    "cookie-parser": "^1.4.3",
+    "cucumber-assert": "^1.0.4",
+    "dotenv": "^2.0.0",
+    "express": "^4.14.0",
+    "express-handlebars": "^3.0.0",
+    "express-jwt": "^5.0.0",
+    "express-session": "^1.14.1",
+    "jsonwebtoken": "^7.1.9",
+    "knex": "^0.11.10",
+    "passport": "^0.3.2",
+    "passport-local": "^1.0.0",
+    "pg": "^6.1.0",
+    "sodium": "^1.1.12"
+  },
+  "devDependencies": {
+    "eslint": "^3.3.1",
+    "eslint-config-standard": "^6.0.0",
+    "eslint-plugin-promise": "^2.0.1",
+    "eslint-plugin-standard": "^2.0.0",
+    "node-inspector": "^0.12.8",
+    "nodemon": "^1.10.2",
+    "sqlite3": "^3.1.4"
+  },
+  "engines": {
+    "node": "6.5"
   }
 }
